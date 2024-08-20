@@ -37,9 +37,17 @@
             text-decoration: none;
             margin: 0 15px;
             font-family: 'Arial', sans-serif;
+            cursor: pointer;
         }
         .nav-links a:hover {
             text-decoration: underline;
+        }
+        .goal-text {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            padding: 0 10%;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -47,9 +55,22 @@
     <div class="container">
         <h1>Lazarus</h1>
         <div class="nav-links">
-            <a href="#">Goals</a> |
+            <a id="goal-link">Goals</a> |
             <a href="#">Projects</a>
         </div>
+        <div id="goal-text" class="goal-text">
+            At Lazarus, our goal is to revolutionize healthcare by developing advanced AI tools that accurately detect and diagnose autoimmune diseases. We aim to empower medical professionals with cutting-edge solutions that enhance early detection, improve patient outcomes, and ultimately contribute to better global health.
+        </div>
     </div>
+    <script>
+        document.getElementById('goal-link').addEventListener('click', function() {
+            const goalText = document.getElementById('goal-text');
+            if (goalText.style.display === 'none' || goalText.style.display === '') {
+                goalText.style.display = 'block';
+            } else {
+                goalText.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
