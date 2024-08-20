@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lazarus AI</title>
+    <title>Lazarus</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -42,12 +42,19 @@
         .nav-links a:hover {
             text-decoration: underline;
         }
-        .goal-text {
+        .goal-text, .project-text {
             display: none;
             margin-top: 20px;
             font-size: 1.2rem;
             padding: 0 10%;
             line-height: 1.6;
+        }
+        .project-text a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+        .project-text a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -56,19 +63,35 @@
         <h1>Lazarus</h1>
         <div class="nav-links">
             <a id="goal-link">Goals</a> |
-            <a href="#">Projects</a>
+            <a id="project-link">Projects</a>
         </div>
         <div id="goal-text" class="goal-text">
             At Lazarus, our goal is to revolutionize healthcare by developing advanced AI tools that accurately detect and diagnose autoimmune diseases. We aim to empower medical professionals with cutting-edge solutions that enhance early detection, improve patient outcomes, and ultimately contribute to better global health.
+        </div>
+        <div id="project-text" class="project-text">
+            My current project: Click <a href="#">here</a> for Inference.
         </div>
     </div>
     <script>
         document.getElementById('goal-link').addEventListener('click', function() {
             const goalText = document.getElementById('goal-text');
+            const projectText = document.getElementById('project-text');
+            projectText.style.display = 'none';
             if (goalText.style.display === 'none' || goalText.style.display === '') {
                 goalText.style.display = 'block';
             } else {
                 goalText.style.display = 'none';
+            }
+        });
+
+        document.getElementById('project-link').addEventListener('click', function() {
+            const projectText = document.getElementById('project-text');
+            const goalText = document.getElementById('goal-text');
+            goalText.style.display = 'none';
+            if (projectText.style.display === 'none' || projectText.style.display === '') {
+                projectText.style.display = 'block';
+            } else {
+                projectText.style.display = 'none';
             }
         });
     </script>
