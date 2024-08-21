@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lazarus</title>
+    <title>Lazarus AI</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -42,18 +42,18 @@
         .nav-links a:hover {
             text-decoration: underline;
         }
-        .goal-text, .project-text {
+        .goal-text, .project-text, .project-description {
             display: none;
             margin-top: 20px;
             font-size: 1.2rem;
             padding: 0 10%;
             line-height: 1.6;
         }
-        .project-text a {
+        .project-text a, .project-description a {
             color: #00bfff;
             text-decoration: none;
         }
-        .project-text a:hover {
+        .project-text a:hover, .project-description a:hover {
             text-decoration: underline;
         }
     </style>
@@ -66,17 +66,22 @@
             <a id="project-link">Projects</a>
         </div>
         <div id="goal-text" class="goal-text">
-            The goal is to revolutionize healthcare by developing simple AI tools that accurately early detection of diseases. 
+            At Lazarus, our goal is to revolutionize healthcare by developing advanced AI tools that accurately detect and diagnose autoimmune diseases. We aim to empower medical professionals with cutting-edge solutions that enhance early detection, improve patient outcomes, and ultimately contribute to better global health.
         </div>
         <div id="project-text" class="project-text">
-            MonkeyNet 2.0: Click <a href="#">here</a> to try it out !.
+            <a id="lazarus-link">Lazarus 0.1</a>
+        </div>
+        <div id="project-description" class="project-description">
+            **Lazarus 0.1:** A highly efficient deep learning model specifically designed to detect and diagnose skin and eye diseases. The model utilizes state-of-the-art techniques in computer vision and neural networks to achieve high accuracy and speed, making it a powerful tool for medical professionals. With Lazarus 0.1, early detection of diseases becomes more accessible, potentially saving lives and improving patient care by facilitating timely intervention.
         </div>
     </div>
     <script>
         document.getElementById('goal-link').addEventListener('click', function() {
             const goalText = document.getElementById('goal-text');
             const projectText = document.getElementById('project-text');
+            const projectDescription = document.getElementById('project-description');
             projectText.style.display = 'none';
+            projectDescription.style.display = 'none';
             if (goalText.style.display === 'none' || goalText.style.display === '') {
                 goalText.style.display = 'block';
             } else {
@@ -87,11 +92,22 @@
         document.getElementById('project-link').addEventListener('click', function() {
             const projectText = document.getElementById('project-text');
             const goalText = document.getElementById('goal-text');
+            const projectDescription = document.getElementById('project-description');
             goalText.style.display = 'none';
+            projectDescription.style.display = 'none';
             if (projectText.style.display === 'none' || projectText.style.display === '') {
                 projectText.style.display = 'block';
             } else {
                 projectText.style.display = 'none';
+            }
+        });
+
+        document.getElementById('lazarus-link').addEventListener('click', function() {
+            const projectDescription = document.getElementById('project-description');
+            if (projectDescription.style.display === 'none' || projectDescription.style.display === '') {
+                projectDescription.style.display = 'block';
+            } else {
+                projectDescription.style.display = 'none';
             }
         });
     </script>
